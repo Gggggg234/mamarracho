@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mamarracho</title>
+  <meta name="description" content="Dibujá, adiviná y subastá los peores dibujos de tus amigos. Un juego de dibujo para jugar desde el celu.">
+  <meta name="theme-color" content="#FFE14A">
+  <meta property="og:title" content="Mamarracho">
+  <meta property="og:description" content="Dibujá, adiviná y subastá los peores dibujos de tus amigos.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFE14A'/%3E%3Cg stroke='%231E1B3A' stroke-width='4' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M14 50l3-11 26-26a5 5 0 0 1 7 7L24 46z' fill='%23FF5C9D'/%3E%3Cpath d='M38 18l7 7M14 50l10-4'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gochi+Hand&family=Grandstander:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-screen="home">
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="boil-0" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="2" result="t"/>
+        <feDisplacementMap in="SourceGraphic" in2="t" scale="3.5"/>
+      </filter>
+      <filter id="boil-1" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="9" result="t"/>
+        <feDisplacementMap in="SourceGraphic" in2="t" scale="3.5"/>
+      </filter>
+      <filter id="boil-2" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="17" result="t"/>
+        <feDisplacementMap in="SourceGraphic" in2="t" scale="3.5"/>
+      </filter>
+      <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <header class="topbar">
+    <span class="tb-logo" aria-hidden="true">Mamarracho</span>
+    <button class="room-chip" id="tb-room" type="button" title="Copiar el link de la sala" hidden>Sala <b id="tb-code">----</b></button>
+    <span class="net-pill" id="net" role="status" hidden>Reconectando…</span>
+    <span class="tb-spacer"></span>
+    <button class="icon-btn" id="tb-sound" type="button" aria-label="Silenciar">🔊</button>
+    <button class="icon-btn tb-leave" id="tb-leave" type="button" hidden>Salir</button>
+  </header>
+
+  <main id="app"></main>
+
+  <div id="toasts" aria-live="polite"></div>
+  <div id="fx" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true" hidden></canvas>
+  <div id="busy" hidden>
+    <div class="busy-card">
+      <span class="spinner big" aria-hidden="true"></span>
+      <b id="busy-text">Cargando…</b>
+    </div>
+  </div>
+
+  <noscript><p class="noscript">Mamarracho necesita JavaScript para funcionar.</p></noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/net.js"></script>
+  <script src="js/server.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/screens-a.js"></script>
+  <script src="js/screens-b.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
